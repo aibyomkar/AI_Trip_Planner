@@ -20,7 +20,7 @@ class GraphBuilder():
             # CurrencyConverterTool()
         ]
 
-    def agent_function(self):
+    def agent_function(self, state: MessagesState):
         '''Main agent function'''
 
         user_question = state['messages']

@@ -6,19 +6,31 @@ from langgraph.prebuilt import ToolNode, tools_condition
 # from tools.weather_info_tool import WeatherInfoTool
 # from tools.place_search_tool import PlaceSearchTool
 # from tools.expense_calculator_tool import CalculatorTool
-# from tools.currency_conversion_tool import currency_conversion_tool
+# from tools.currency_conversion_tool import CurrencyConverterTool
 
 
 class GraphBuilder():
 
     def __init__(self):
-        pass
+
+        self.tools = [
+            # WeatherInfoTool(),
+            # PlaceSearchTool(),
+            # CalculatorTool(),
+            # CurrencyConverterTool()
+        ]
 
     def agent_function(self):
-        pass
+        '''Main agent function'''
+
+        user_question = state['messages']
+        input_question = [self.system_prompt] + user_question
 
     def build_graph(self):
+
         graph_builder = StateGraph(MessagesState)
+
+        # reasoning and action flow
 
         graph_builder.add_node('agent', self.agent_function)
         graph_builder.add_node('tools', ToolNode(tools = self.tools))
@@ -27,5 +39,9 @@ class GraphBuilder():
         graph_builder.add_edge('tools', 'agent')
         graph_builder.add_edge('agent', END)
 
+        self.graph = graph_builder.compile()
+
+        return self.graph
+
     def __call__(self):
-        pass
+        return self.build_graph()

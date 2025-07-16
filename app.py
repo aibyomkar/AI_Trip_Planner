@@ -23,8 +23,8 @@ async def query_travel_agent(query: QueryRequest):
             f.write(png_graph)
         print(f'Graph saved as \'my_graph.png\' in {os.getcwd()}')
 
-        # Assuming request is a pydantic object like: {'question': 'your text'}
-        messages = {'messages': [query.question]}
+        # Assuming request is a pydantic object like: {'query': 'your text'}
+        messages = {'messages': [query.query]}
         output = react_app.invoke(messages)
 
         # if result is dict with messages:

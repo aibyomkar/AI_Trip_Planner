@@ -1,4 +1,4 @@
-# reacts (reasoning and action agentic workflow)
+# react (reasoning and action agentic ai workflow)
 
 from utils.model_loader import ModelLoader
 from prompt_library.prompt import SYSTEM_PROMPT

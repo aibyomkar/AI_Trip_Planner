@@ -1,7 +1,6 @@
 import streamlit as st
 import requests
 import datetime
-import sys
 
 BASE_URL = 'http://localhost:8000'  # Backend endpoint
 
@@ -19,12 +18,12 @@ if 'messages' not in st.session_state:
     st.session_state.messages = []
 
 # Display prompt
-st.header('How can I help you in planning a trip? Let me know where you want to visit.')
+st.header('🧭 Where shall we explore next?')
 
 # Chat input box
 with st.form(key='query_form', clear_on_submit=True):
     user_input = st.text_input('User Input', placeholder='e.g. Plan a trip to Goa for 5 days')
-    submit_button = st.form_submit_button('Send')
+    submit_button = st.form_submit_button('Ask AI')
 
 if submit_button and user_input.strip():
     try:

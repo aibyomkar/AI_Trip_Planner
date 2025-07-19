@@ -30,7 +30,7 @@ with st.form(key='query_form', clear_on_submit=True):
 if submit_button and user_input.strip():
     try:
         with st.spinner('A.I. is thinking...'):
-            payload = {'question': user_input}
+            payload = {'query': user_input}
             response = requests.post(f'{BASE_URL}/query', json=payload)
 
         if response.status_code == 200:

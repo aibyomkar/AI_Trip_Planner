@@ -7,13 +7,31 @@ import datetime
 BASE_URL = 'http://localhost:8000'  # Backend endpoint
 
 st.set_page_config(
-    page_title="Omkar's AI Trip Planner",
+    page_title="Roamio AI",
     page_icon="🌏",
     layout="centered",
     initial_sidebar_state='expanded'
 )
 
-st.title('🌏 Omkar\'s AI Trip Planner')
+st.markdown("""
+<div style='text-align: center; padding: 15px 0;'>
+    <h1 style='
+        font-size: 2.8rem; 
+        margin: 0;
+        font-weight: 600;
+    '>🌏 <span style='
+        background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    '>Roamio AI</span></h1>
+    <p style='
+        color: #7c8db5;
+        margin: 5px 0;
+        font-size: 1rem;
+        font-style: italic;
+    '>Your AI Trip Planner by Omkar</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Initialize chat history
 if 'messages' not in st.session_state:
@@ -21,25 +39,6 @@ if 'messages' not in st.session_state:
 
 # Display prompt
 st.header('🧭 Where shall we explore next?')
-
-# with st.sidebar:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 with st.sidebar:
    # Beautiful header
@@ -53,7 +52,7 @@ with st.sidebar:
    st.markdown("""
                - For best results, prompt AI with as much details as possible
                 
-               - Example: 'plan a 5 day trip to usa for 5 people, we prefer beaches, convert the currency from usd to inr, my budget is between 1 lakh to 2 lakhs inr'
+               - Example: plan a 5 day trip to usa for 5 people, we prefer beaches, convert the currency from usd to inr, per person budget is between 10 lakh to 11 lakhs inr
                """)
    
    st.divider()
@@ -80,20 +79,6 @@ with st.sidebar:
    </div>
    """, unsafe_allow_html=True)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Chat input box
 with st.form(key='query_form', clear_on_submit=True):
     user_input = st.text_input('Prompt Here')
@@ -101,7 +86,7 @@ with st.form(key='query_form', clear_on_submit=True):
 
 if submit_button and user_input.strip():
     try:
-        with st.spinner('AI is thinking...'):
+        with st.spinner('Roamio AI is thinking...'):
             payload = {'query': user_input}
             response = requests.post(f'{BASE_URL}/query', json=payload)
 
@@ -111,7 +96,7 @@ if submit_button and user_input.strip():
             # answer = answer.strip()
 
             st.write(f'**Generated:** {datetime.datetime.now().strftime('%Y-%m-%d at %H:%M')}')
-            st.write(f'**Created by:** Omkar\'s AI Trip Planner')
+            st.write(f'**Created by:** Omkar\'s Roamio AI Trip Planner')
 
             st.subheader('🧭 AI Trip Plan')
 
@@ -123,7 +108,7 @@ if submit_button and user_input.strip():
             st.markdown(
                 """
                 <div style='text-align: center; color: #666; padding: 10px;'>
-                    Made with ❤️ by Omkar's AI Trip Planner
+                    Made with ❤️ by Omkar
                 </div>
                 """, 
                 unsafe_allow_html=True

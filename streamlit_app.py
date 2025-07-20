@@ -262,7 +262,7 @@ with st.sidebar:
     import random
     st.info(random.choice(luxury_facts))
 
-    st.markdown("### 🌐 Connect With Us")
+    st.markdown("### 🌐 Connect With Me")
     st.markdown("""
     <div style='text-align: center;'>
         <a href='https://github.com/your_username' target='_blank' style='text-decoration: none; margin: 0 10px;'>

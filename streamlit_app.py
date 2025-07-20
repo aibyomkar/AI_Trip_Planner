@@ -374,11 +374,7 @@ if submit_button and user_input.strip():
             '>📋 CURATED ITINERARY</h3>
             </div>
             """, unsafe_allow_html=True)
-
-
-
-
-
+            
             st.markdown(f'**Crafted:** {datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")}')
             st.markdown(f'**By:** Roamio')
             

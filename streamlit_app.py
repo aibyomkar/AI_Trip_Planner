@@ -202,7 +202,7 @@ st.markdown("""
     '>AI</span></h1>
     <p style='
         color: #b8860b;
-        margin: 10px 0;
+        margin: 5px 0;
         font-size: 1.1rem;
         font-style: italic;
         letter-spacing: 1px;

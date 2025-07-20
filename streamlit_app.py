@@ -289,6 +289,25 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
+
+
+
+
+
+
+
+# Add this right before your form
+st.info("💡 **Example:** Plan a 5-day USA trip for 5 people. We love beaches, mountains, and paragliding. Budget: 11-12 lakhs INR per person. Convert USD to INR.")
+
+
+
+
+
+
+
+
+
+
 # Premium Input Form
 with st.form(key='concierge_form', clear_on_submit=True):
     user_input = st.text_area('Share your travel aspirations...', height=100, placeholder="Describe your dream journey...")

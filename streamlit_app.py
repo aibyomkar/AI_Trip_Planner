@@ -229,17 +229,21 @@ st.markdown("""
 # Add this right after your "DESTINATION INQUIRY" section and before the form
 with st.expander("🧠 What Can Roamio Do? Click to discover"):
     st.markdown("""
-    **Your AI-powered personal travel assistant:**
-    
-    - 🧳 Understands your preferences: destination, dates, budget, group type
-    - 🧭 Generates personalized day-wise itineraries instantly
-    - 🏙️ Suggests real places: landmarks, cafes, hidden gems, museums
-    - 🗺️ Organizes intelligently with timing and proximity-based suggestions
-    - ✨ Discovers offbeat locations using real-time APIs
-    - 🔍 Backed by Google Maps' 200M+ verified places dataset
-    - 📆 Auto-balances activities: cultural, relaxing, adventurous
-    - 🌐 Fetches weather, travel tips, and exchange rates
-    - 💡 Perfect for solo, couples, family, or group adventures
+    Roamio is your AI-powered personal travel assistant that can:
+
+    - 🧳 Understand your travel preferences: destination, dates, budget, group type, vibe, interests, and more.
+    - 🧭 Generate full day-wise itineraries personalized just for you, instantly.
+    - 🏙️ Suggest real places to visit — including landmarks, cafes, hidden gems, museums, and local experiences.
+    - 🗺️ Organize the itinerary intelligently with proper ordering, timing, and proximity-based suggestions.
+    - ✨ Discover offbeat locations and non-touristy ideas using real-time data from Tavily and Google Places APIs.
+    - 🔍 Backed by **Google Maps’ dataset of over 200 million+ verified places**, Roamio gives incredibly accurate, data-rich recommendations.
+    - 📆 Auto-balances days with different types of activities: cultural, relaxing, adventurous, scenic, etc.
+    - 🌐 Fetch weather, travel tips, and even exchange rate info dynamically.
+    - 💡 Ideal for solo travelers, couples, family holidays, or even group adventures.
+
+    Whether you're planning a weekend escape or a multi-country backpacking trip — Roamio does it all.
+
+    ---
     """)
 
 

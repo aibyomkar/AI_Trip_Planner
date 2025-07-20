@@ -210,13 +210,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Elegant Input Section
-st.markdown("""
-<div style='background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #555;'>
-    <h3 style='color: #d4af37; text-align: center; margin-bottom: 15px; font-weight: 300; letter-spacing: 2px;'>🌍 DESTINATION INQUIRY</h3>
-</div>
-""", unsafe_allow_html=True)
-
 with st.expander("🧠 What Can Roamio Do? Click to discover"):
    st.markdown("""   
    - 🧳 Understands your preferences: destination, dates, budget, group type
@@ -231,6 +224,13 @@ with st.expander("🧠 What Can Roamio Do? Click to discover"):
    - 💡 Perfect for solo, couples, family, or group adventures
    - 🌟 Live 24 X 7
    """)
+
+# Elegant Input Section
+st.markdown("""
+<div style='background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #555;'>
+    <h3 style='color: #d4af37; text-align: center; margin-bottom: 15px; font-weight: 300; letter-spacing: 2px;'>🌍 DESTINATION INQUIRY</h3>
+</div>
+""", unsafe_allow_html=True)
 
 with st.sidebar:
     st.markdown("""

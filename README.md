@@ -159,7 +159,3 @@ Built with ❤️ and AI magic ✨
 ---
 
 **Enjoy planning your adventures with AI, anytime, anywhere 🌍✈️**
-
-```
-
----

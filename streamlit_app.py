@@ -182,7 +182,7 @@ border-radius: 15px; margin-bottom: 25px; box-shadow: 0 8px 32px rgba(0,0,0,0.3)
     <h1 style='color: #FFFFFF; margin: 0; font-size: 2.5rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);'>
         🌏 Roamio AI
     </h1>
-    <p style='color: #A8A8FF; margin: 8px 0; font-size: 1.1rem; opacity: 0.9;'>Premium AI Trip Planner</p>
+    <p style='color: #A8A8FF; margin: 8px 0; font-size: 1.1rem; opacity: 0.9;'>Your AI Trip Planner by Omkar, built with complete guidance from Krish Naik & Sunny Sir</p>
 </div>
 """, unsafe_allow_html=True)
 

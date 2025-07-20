@@ -319,7 +319,7 @@ if submit_button and user_input.strip():
             st.markdown("---")
             st.markdown("""
             <div style='text-align: center; background: linear-gradient(135deg, #1a1a2e 0%, #2c2c54 100%); padding: 15px; border-radius: 8px; border: 1px solid #333;'>
-                <span style='color: #d4af37; font-style: italic;'>Crafted with Excellence | Roamio Concierge</span>
+                <span style='color: #d4af37; font-style: italic;'>Crafted with Excellence | Roamio | By Omkar · Guided by Krish Naik & Sunny Sir</span>
             </div>
             """, unsafe_allow_html=True)
             

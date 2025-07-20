@@ -227,23 +227,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 with st.expander("🧠 What Can Roamio Do? Click to discover"):
    st.markdown("""   
    - 🧳 Understands your preferences: destination, dates, budget, group type
@@ -283,23 +266,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 with st.sidebar:
     st.markdown("""
     <div style='
@@ -323,19 +289,7 @@ with st.sidebar:
     '>CONCIERGE SERVICES ✨</h4>
     </div>
     """, unsafe_allow_html=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     st.markdown("### 🎯 Some Recommendations")
     st.markdown("""
     **For premium itineraries, include:**

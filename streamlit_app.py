@@ -172,6 +172,12 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
+    st.success("""
+    <div style='text-align: center;'>
+               <span style='font-size: 15px;'>If Roamio crashes, reload and try again</span>
+    </div>
+    """, unsafe_allow_html=True)
+
 # Premium Input Form
 with st.form(key='concierge_form', clear_on_submit=True):
     user_input = st.text_area('Share your travel aspirations...', height=100, placeholder="Describe your dream journey...")

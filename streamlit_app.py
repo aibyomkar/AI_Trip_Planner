@@ -253,8 +253,6 @@
 import streamlit as st
 import requests
 import datetime
-import markdown
-from bs4 import BeautifulSoup
 
 BASE_URL = 'https://ai-trip-planner-backend-jrdl.onrender.com'
 

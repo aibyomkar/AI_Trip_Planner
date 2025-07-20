@@ -14,7 +14,7 @@ langchain_groq
 langchain_openai
 langgraph
 langchain-google-community[places]
-markdown
-beautifulsoup4
+
+
 
 -e .

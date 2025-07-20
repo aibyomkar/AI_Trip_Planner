@@ -291,7 +291,7 @@ with st.sidebar:
 
 # Premium Input Form
 with st.form(key='concierge_form', clear_on_submit=True):
-    user_input = st.text_area('Share your travel aspirations...', height=100, placeholder="Describe your dream journey...")
+    user_input = st.text_area('Share your travel aspirations...', height=100, placeholder="Example: Plan a 5-day USA trip for 5 people. We love beaches, mountains, and paragliding. Budget: 11-12 lakhs INR per person. Please convert USD to INR.")
     submit_button = st.form_submit_button('✨ Consult Roamio', use_container_width=True)
 
 if submit_button and user_input.strip():

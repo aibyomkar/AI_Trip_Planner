@@ -99,28 +99,28 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 with st.sidebar:
-    st.markdown("""
-    <div style='
-    text-align: center; 
-    padding: 15px 10px; 
-    background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%); 
-    border-radius: 10px; 
-    margin-bottom: 20px; 
-    border: 1px solid #444;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    '>
-    <h4 style='
-        color: #d4af37; 
-        margin: 0; 
-        letter-spacing: clamp(0.5px, 1.5vw, 1px);
-        font-size: clamp(1rem, 3.5vw, 1.25rem);
-        text-align: center;
-        width: 100%;
-    '>CONCIERGE SERVICES ✨</h4>
-    </div>
-    """, unsafe_allow_html=True)
+    # st.markdown("""
+    # <div style='
+    # text-align: center; 
+    # padding: 15px 10px; 
+    # background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%); 
+    # border-radius: 10px; 
+    # margin-bottom: 20px; 
+    # border: 1px solid #444;
+    # display: flex;
+    # align-items: center;
+    # justify-content: center;
+    # '>
+    # <h4 style='
+    #     color: #d4af37; 
+    #     margin: 0; 
+    #     letter-spacing: clamp(0.5px, 1.5vw, 1px);
+    #     font-size: clamp(1rem, 3.5vw, 1.25rem);
+    #     text-align: center;
+    #     width: 100%;
+    # '>CONCIERGE SERVICES ✨</h4>
+    # </div>
+    # """, unsafe_allow_html=True)
 
     st.markdown("### 🎯 Some Recommendations")
     st.markdown("""

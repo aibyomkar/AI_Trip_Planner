@@ -266,10 +266,10 @@ with st.sidebar:
     st.markdown("""
     <div style='text-align: center;'>
         <a href='https://github.com/your_username' target='_blank' style='text-decoration: none; margin: 0 10px;'>
-            <span style='font-size: 24px;'>GitHub</span>
+            <span style='font-size: 12px;'>GitHub</span>
         </a>
         <a href='https://instagram.com/your_handle' target='_blank' style='text-decoration: none; margin: 0 10px;'>
-            <span style='font-size: 24px;'>Instagram</span>
+            <span style='font-size: 12px;'>Instagram</span>
         </a>
     </div>
     """, unsafe_allow_html=True)

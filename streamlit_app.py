@@ -217,16 +217,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-
-
-
-
-
-
-
-
-
-
 with st.expander("🧠 What Can Roamio Do? Click to discover"):
    st.markdown("""
    **Your AI-powered personal travel assistant:**
@@ -241,21 +231,8 @@ with st.expander("🧠 What Can Roamio Do? Click to discover"):
    - 📆 Auto-balances activities: cultural, relaxing, adventurous
    - 🌐 Fetches weather, travel tips, and exchange rates
    - 💡 Perfect for solo, couples, family, or group adventures
+   - 🌟 Live 24 X 7
    """)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 with st.sidebar:
     st.markdown("""

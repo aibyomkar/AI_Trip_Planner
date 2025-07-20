@@ -218,9 +218,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 with st.expander("🧠 What Can Roamio Do? Click to discover"):
-   st.markdown("""
-   **Your AI-powered personal travel assistant:**
-   
+   st.markdown("""   
    - 🧳 Understands your preferences: destination, dates, budget, group type
    - 🧠 Intelligently reasons and takes actions based on your input
    - 🧭 Generates personalized day-wise itineraries instantly

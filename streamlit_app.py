@@ -436,6 +436,7 @@ if submit_button and user_input.strip():
 
         if response.status_code == 200:
             answer = response.json().get('answer', 'No recommendations available.')
+            answer = answer.strip()
 
             # Elegant Results Display
             st.markdown("""
@@ -463,8 +464,6 @@ if submit_button and user_input.strip():
             current_time = datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")
             st.markdown(f'**Crafted:** {current_time}')
             st.markdown(f'**By:** Roamio')
-
-            answer = answer.strip()
 
             st.markdown(answer)
             

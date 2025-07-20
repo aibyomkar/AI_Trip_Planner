@@ -164,372 +164,123 @@
 
 
 
-# frontend
+
+
+
+
+
+
 
 import streamlit as st
 import requests
 import datetime
 
-# BASE_URL = 'http://localhost:8000'  # Backend endpoint
-BASE_URL = 'https://ai-trip-planner-backend-jrdl.onrender.com'  # Backend endpoint
+BASE_URL = 'https://ai-trip-planner-backend-jrdl.onrender.com'
 
 st.set_page_config(
-    page_title="Roamio AI",
-    page_icon="🌏",
+    page_title="Voyager Elite",
+    page_icon="✈️",
     layout="centered",
     initial_sidebar_state='expanded'
 )
 
-# Premium CSS styling
+# Luxury Header
 st.markdown("""
-<style>
-    /* Global theme customization */
-    .main .block-container {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        margin: 1rem;
-    }
-    
-    /* Sidebar styling */
-    .css-1d391kg {
-        background: linear-gradient(180deg, #2c3e50 0%, #3498db 100%);
-        border-radius: 0 20px 20px 0;
-    }
-    
-    .sidebar .sidebar-content {
-        background: linear-gradient(180deg, #2c3e50 0%, #3498db 100%);
-    }
-    
-    /* Header styling */
-    .premium-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 30px 20px;
-        border-radius: 20px;
-        text-align: center;
-        margin-bottom: 30px;
-        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .premium-header::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-        animation: shimmer 3s infinite;
-        transform: rotate(45deg);
-    }
-    
-    @keyframes shimmer {
-        0% { transform: translateX(-100%) rotate(45deg); }
-        100% { transform: translateX(100%) rotate(45deg); }
-    }
-    
-    /* Form styling */
-    .stTextInput > div > div > input {
-        background: linear-gradient(145deg, #ffffff, #f0f0f0);
-        border: 2px solid #e0e6ed;
-        border-radius: 15px;
-        padding: 15px 20px;
-        font-size: 16px;
-        transition: all 0.3s ease;
-        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .stTextInput > div > div > input:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
-        transform: translateY(-2px);
-    }
-    
-    /* Button styling */
-    .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 15px;
-        padding: 12px 30px;
-        font-weight: 600;
-        font-size: 16px;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    
-    .stButton > button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
-        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-    }
-    
-    /* Spinner customization */
-    .stSpinner > div {
-        border-top-color: #667eea !important;
-        border-right-color: #764ba2 !important;
-    }
-    
-    /* Content cards */
-    .premium-card {
-        background: linear-gradient(145deg, #ffffff, #f8f9fa);
-        border-radius: 20px;
-        padding: 25px;
-        margin: 20px 0;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        border: 1px solid rgba(102, 126, 234, 0.1);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .premium-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    }
-    
-    /* Subheader styling */
-    .premium-subheader {
-        color: #2c3e50;
-        font-weight: 700;
-        font-size: 1.8rem;
-        margin: 30px 0 20px 0;
-        text-align: center;
-        position: relative;
-        padding-bottom: 10px;
-    }
-    
-    .premium-subheader::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 3px;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-        border-radius: 2px;
-    }
-    
-    /* Info box styling */
-    .stInfo {
-        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-        border-left: 5px solid #2196f3;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
-    }
-    
-    /* Divider styling */
-    hr {
-        border: none;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #667eea, transparent);
-        margin: 30px 0;
-    }
-    
-    /* Sidebar enhancements */
-    .sidebar-tip-card {
-        background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.1));
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
-        padding: 20px;
-        margin: 15px 0;
-        border: 1px solid rgba(255,255,255,0.2);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }
-    
-    /* Animation for loading */
-    @keyframes pulse {
-        0% { opacity: 1; }
-        50% { opacity: 0.7; }
-        100% { opacity: 1; }
-    }
-    
-    .loading-text {
-        animation: pulse 1.5s infinite;
-        color: #667eea;
-        font-weight: 600;
-    }
-    
-    /* Footer styling */
-    .premium-footer {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-radius: 15px;
-        padding: 20px;
-        text-align: center;
-        margin-top: 30px;
-        border: 1px solid rgba(102, 126, 234, 0.1);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    
-    /* Hide Streamlit branding */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    .stDeployButton {visibility: hidden;}
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class='premium-header'>
+<div style='text-align: center; padding: 25px 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 15px; margin-bottom: 30px; border: 1px solid #333;'>
     <h1 style='
         font-size: 3.2rem; 
         margin: 0;
-        font-weight: 700;
-        color: white;
-        text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        position: relative;
-        z-index: 1;
-    '>🌏 <span style='
-        background: linear-gradient(45deg, #ffffff 0%, #f0f8ff 100%);
+        font-weight: 300;
+        letter-spacing: 3px;
+        color: #fff;
+        font-family: "Times New Roman", serif;
+    '>✈️ VOYAGER <span style='
+        background: linear-gradient(45deg, #d4af37, #ffd700, #ffed4e);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        text-shadow: none;
-    '>Roamio AI</span></h1>
+        font-weight: 600;
+    '>ELITE</span></h1>
     <p style='
-        color: rgba(255,255,255,0.9);
-        margin: 10px 0 0 0;
+        color: #b8860b;
+        margin: 10px 0;
         font-size: 1.1rem;
         font-style: italic;
-        font-weight: 300;
-        position: relative;
-        z-index: 1;
-    '>Your AI Trip Planner by Omkar, built with complete guidance from Krish Naik & Sunny Sir.</p>
+        letter-spacing: 1px;
+    '>Bespoke Travel Curation by AI Concierge</p>
 </div>
 """, unsafe_allow_html=True)
 
-# Initialize chat history
-if 'messages' not in st.session_state:
-    st.session_state.messages = []
-
-# Display prompt
-st.markdown('<h2 class="premium-subheader">🧭 Where shall we explore next?</h2>', unsafe_allow_html=True)
+# Elegant Input Section
+st.markdown("""
+<div style='background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #555;'>
+    <h3 style='color: #d4af37; text-align: center; margin-bottom: 15px; font-weight: 300; letter-spacing: 2px;'>🌍 DESTINATION INQUIRY</h3>
+</div>
+""", unsafe_allow_html=True)
 
 with st.sidebar:
-   # Beautiful header
-   st.markdown("""
-   <div style='
-        text-align: center; 
-        padding: 20px; 
-        background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%); 
-        border-radius: 15px; 
-        margin-bottom: 25px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.3);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-   '>
-       <h4 style='color: white; margin: 0; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);'>Hey Buddy Welcome ✈️</h4>
-   </div>
-   """, unsafe_allow_html=True)
-   
-   st.markdown("""
-   <div class='sidebar-tip-card'>
-       <h4 style='color: white; margin: 0 0 15px 0; font-weight: 600;'>🎯 Quick Tips</h4>
-       <div style='color: rgba(255,255,255,0.9); line-height: 1.6; font-size: 14px;'>
-           • For best results, prompt AI with as much details as possible<br><br>
-           • Example: plan a 5 day trip to usa for 5 people, we prefer beaches, convert the currency from usd to inr, per person budget is between 10 lakh to 11 lakhs inr
-       </div>
-   </div>
-   """, unsafe_allow_html=True)
-   
-   st.markdown("<br>", unsafe_allow_html=True)
-   
-   # Fun travel facts
-   st.markdown("""
-   <div class='sidebar-tip-card'>
-       <h4 style='color: white; margin: 0 0 15px 0; font-weight: 600;'>🌍 Did You Know?</h4>
-   """, unsafe_allow_html=True)
-   
-   facts = [
-       "🏔️ Nepal has 8 of the world's 10 tallest mountains",
-       "🌊 Maldives has 1,192 coral islands",
-       "🕌 India has 38 UNESCO World Heritage Sites"
-   ]
-   
-   import random
-   daily_fact = random.choice(facts)
-   st.markdown(f"""
-       <div style='
-           background: linear-gradient(135deg, rgba(33, 150, 243, 0.2) 0%, rgba(33, 150, 243, 0.1) 100%);
-           padding: 15px;
-           border-radius: 10px;
-           color: rgba(255,255,255,0.9);
-           border-left: 4px solid #2196f3;
-           font-size: 14px;
-           line-height: 1.5;
-       '>{daily_fact}</div>
-   </div>
-   """, unsafe_allow_html=True)
-   
-   st.markdown("<br>", unsafe_allow_html=True)
-      
-   # Footer
-   st.markdown("""
-   <div style='
-        text-align: center; 
-        color: rgba(255,255,255,0.7);
-        padding: 15px;
-        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-        border-radius: 10px;
-        backdrop-filter: blur(5px);
-   '>
-       <small style='font-weight: 500;'>🤖 Your AI Travel Buddy</small>
-   </div>
-   """, unsafe_allow_html=True)
+    st.markdown("""
+    <div style='text-align: center; padding: 15px; background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%); border-radius: 10px; margin-bottom: 20px; border: 1px solid #444;'>
+        <h4 style='color: #d4af37; margin: 0; letter-spacing: 1px;'>CONCIERGE SERVICES ✨</h4>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("### 🎯 Elite Recommendations")
+    st.markdown("""
+    **For premium itineraries, include:**
+    - Destination preferences & duration
+    - Group size & luxury tier
+    - Budget range in preferred currency
+    - Special experiences desired
+    """)
+    
+    st.divider()
+    
+    st.markdown("### 💎 Exclusive Insights")
+    luxury_facts = [
+        "🏰 Dubai has the world's only 7-star hotel",
+        "🍾 Monaco has more millionaires per capita than anywhere",
+        "🌸 Japan's cherry blossom season lasts only 2 weeks"
+    ]
+    
+    import random
+    st.info(random.choice(luxury_facts))
 
-# Chat input box
-st.markdown("<div class='premium-card'>", unsafe_allow_html=True)
-with st.form(key='query_form', clear_on_submit=True):
-    user_input = st.text_input('Prompt Here', placeholder="✨ Describe your dream destination...")
-    submit_button = st.form_submit_button('Ask AI')
-st.markdown("</div>", unsafe_allow_html=True)
+# Premium Input Form
+with st.form(key='concierge_form', clear_on_submit=True):
+    user_input = st.text_area('Share your travel aspirations...', height=100, placeholder="Describe your dream journey...")
+    submit_button = st.form_submit_button('✨ Consult AI Concierge', use_container_width=True)
 
 if submit_button and user_input.strip():
     try:
-        with st.spinner('Roamio AI is thinking...'):
-            payload = {'query': user_input}
-            response = requests.post(f'{BASE_URL}/query', json=payload)
+        with st.spinner('🔮 Crafting your bespoke itinerary...'):
+            response = requests.post(f'{BASE_URL}/query', json={'query': user_input})
 
         if response.status_code == 200:
-            answer = response.json().get('answer', 'No answer returned.')
+            answer = response.json().get('answer', 'No recommendations available.')
 
-            # answer = answer.strip()
-
-            st.markdown("<div class='premium-card'>", unsafe_allow_html=True)
-            st.write(f'**Generated:** {datetime.datetime.now().strftime('%Y-%m-%d at %H:%M')}')
-            st.write(f'**Created by:** Omkar\'s Roamio AI Trip Planner')
-            st.markdown("</div>", unsafe_allow_html=True)
-
-            st.markdown('<h3 class="premium-subheader">🧭 AI Trip Plan</h3>', unsafe_allow_html=True)
-
-            st.markdown(f"<div class='premium-card'>{answer}</div>", unsafe_allow_html=True)
-
-            st.info('💡 *Note: This trip plan was generated by AI. Please verify all details like pricing, timings, and safety measures before your trip.*')
-
-            st.markdown("---")
-            st.markdown(
-                """
-                <div class='premium-footer'>
-                    <div style='color: #666; font-weight: 500; font-size: 16px;'>
-                        Made with ❤️ by Omkar, under the complete guidance of Krish Naik & Sunny Sir
-                    </div>
-                </div>
-                """, 
-                unsafe_allow_html=True
-            )
+            # Elegant Results Display
+            st.markdown("""
+            <div style='background: linear-gradient(135deg, #1a1a2e 0%, #2c2c54 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #333;'>
+                <h3 style='color: #d4af37; text-align: center; margin-bottom: 15px; letter-spacing: 2px;'>📋 CURATED ITINERARY</h3>
+            </div>
+            """, unsafe_allow_html=True)
             
+            st.markdown(f'**Crafted:** {datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")}')
+            st.markdown(f'**By:** Voyager Elite AI Concierge')
+            
+            st.markdown(answer)
+            
+            st.success('💼 **Concierge Note:** Please verify all arrangements with official sources before travel.')
+            
+            st.markdown("---")
+            st.markdown("""
+            <div style='text-align: center; background: linear-gradient(135deg, #1a1a2e 0%, #2c2c54 100%); padding: 15px; border-radius: 8px; border: 1px solid #333;'>
+                <span style='color: #d4af37; font-style: italic;'>Crafted with Excellence | Voyager Elite Concierge</span>
+            </div>
+            """, unsafe_allow_html=True)
             
         else:
-            st.error('❌ AI failed to respond: ' + response.text)
+            st.error('⚠️ Concierge service temporarily unavailable')
 
     except Exception as e:
-        st.error(f'🚨 The response failed due to: {e}')
+        st.error(f'🚨 Service interruption: {e}')

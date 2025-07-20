@@ -118,7 +118,7 @@ with st.sidebar:
         font-size: clamp(1rem, 3.5vw, 1.25rem);
         text-align: center;
         width: 100%;
-    '>If Roamio crashes, reload and try again ✨</h4>
+    '>CONCIERGE SERVICES ✨</h4>
     </div>
     """, unsafe_allow_html=True)
 
@@ -130,6 +130,8 @@ with st.sidebar:
     - Budget range in preferred currency
     - Special experiences desired
     """)
+
+    st.info('If Roamio crashes, reload and try again')
     
     st.divider()
     
@@ -161,7 +163,6 @@ with st.sidebar:
     st.info(random.choice(luxury_facts))
 
     st.info('If Roamio crashes, reload and try again')
-
 
     st.markdown("### 🌐 Connect With Me")
     st.markdown("""

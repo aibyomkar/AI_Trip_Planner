@@ -118,7 +118,7 @@ with st.sidebar:
         font-size: clamp(1rem, 3.5vw, 1.25rem);
         text-align: center;
         width: 100%;
-    '>CONCIERGE SERVICES ✨</h4>
+    '>If Roamio crashes, reload and try again ✨</h4>
     </div>
     """, unsafe_allow_html=True)
 

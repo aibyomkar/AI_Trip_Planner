@@ -1,3 +1,5 @@
+> ⚠️ **Disclaimer**: This project is based on the tutorial and original work by [Krish Naik](https://www.youtube.com/@KrishNaik) and the code from [sunnysavita10/AI_Trip_Planner](https://github.com/sunnysavita10/AI_Trip_Planner). I followed it for learning and educational purposes and just named it 'Roamio' because It felt cool.
+
 # 🌍 Roamio - AI Trip Planner By Omkar
 
 **Roamio** is a full-stack AI web app that uses technologies like Groq and LangGraph to generate detailed travel itineraries based on a user’s prompt. It features a Streamlit-powered frontend and a FastAPI backend, both deployed live and kept running with uptime monitoring.
@@ -159,19 +161,18 @@ Contributions are welcome! Here’s how to help:
 
 ---
 
-## 📄 License & Credits
+## 📄 Disclaimer & Credits
 
-Released under the **MIT License** — see [LICENSE.md](LICENSE.md)
-
-**Developed by** Omkar Potdar ([@aibyomkar](https://github.com/aibyomkar))
-Built with ❤️ and AI magic ✨
+This project is not an original creation. It is built entirely by following the educational tutorials of [Krish Naik](https://www.youtube.com/c/KrishNaik) and [Sunny Savita](https://github.com/sunnysavita10/AI_Trip_Planner).
+The purpose of this repository is solely for learning, practice, and educational demonstration.
+**All credit for the core logic and design goes to the original creators.**
 
 ---
 
 ## 📫 Contact
 
 * GitHub: [aibyomkar/AI\_Trip\_Planner](https://github.com/aibyomkar/AI_Trip_Planner)
-* Instagram: [@omkar_raps](https://www.instagram.com/omkar_raps?igsh=MWN5cHVuZDV3MjZ4NA%3D%3D&utm_source=qr)
+* Instagram: [@omkar\_raps](https://www.instagram.com/omkar_raps?igsh=MWN5cHVuZDV3MjZ4NA%3D%3D&utm_source=qr)
 * Email: reach out via GitHub
 
 ---

@@ -178,7 +178,7 @@ import datetime
 BASE_URL = 'https://ai-trip-planner-backend-jrdl.onrender.com'
 
 st.set_page_config(
-    page_title="Voyager Elite",
+    page_title="Roamio",
     page_icon="✈️",
     layout="centered",
     initial_sidebar_state='expanded'
@@ -194,19 +194,19 @@ st.markdown("""
         letter-spacing: 3px;
         color: #fff;
         font-family: "Times New Roman", serif;
-    '>✈️ VOYAGER <span style='
+    '>✈️ ROAMIO <span style='
         background: linear-gradient(45deg, #d4af37, #ffd700, #ffed4e);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: 600;
-    '>ELITE</span></h1>
+    '>AI</span></h1>
     <p style='
         color: #b8860b;
         margin: 10px 0;
         font-size: 1.1rem;
         font-style: italic;
         letter-spacing: 1px;
-    '>Bespoke Travel Curation by AI Concierge</p>
+    '>AI Trip Planner by Omkar · Guided by Krish Naik & Sunny Sir</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -220,11 +220,11 @@ st.markdown("""
 with st.sidebar:
     st.markdown("""
     <div style='text-align: center; padding: 15px; background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%); border-radius: 10px; margin-bottom: 20px; border: 1px solid #444;'>
-        <h4 style='color: #d4af37; margin: 0; letter-spacing: 1px;'>CONCIERGE SERVICES ✨</h4>
+        <h4 style='color: #d4af37; margin: 0; letter-spacing: 1px;'>ROAMIO SERVICES ✨</h4>
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("### 🎯 Elite Recommendations")
+    st.markdown("### 🎯 Some Recommendations")
     st.markdown("""
     **For premium itineraries, include:**
     - Destination preferences & duration
@@ -237,9 +237,26 @@ with st.sidebar:
     
     st.markdown("### 💎 Exclusive Insights")
     luxury_facts = [
-        "🏰 Dubai has the world's only 7-star hotel",
-        "🍾 Monaco has more millionaires per capita than anywhere",
-        "🌸 Japan's cherry blossom season lasts only 2 weeks"
+    "🏰 Dubai has the world's only 7-star hotel",
+    "🍾 Monaco has more millionaires per capita than anywhere",
+    "🌸 Japan's cherry blossom season lasts only 2 weeks",
+    "💎 The Ritz Paris has a $18,000 per night Imperial Suite",
+    "🛥️ Superyachts over 100m cost $275 million+ to build",
+    "🏔️ Switzerland's Zermatt bans all cars except electric vehicles",
+    "🍸 The world's most expensive cocktail costs $12,970",
+    "✈️ Private jets can cost $90 million for ultra-long range models",
+    "🏖️ The Bahamas has 365 islands, one for each day",
+    "🌊 The Maldives has overwater villas costing $50,000+ per night",
+    "🎭 Venice receives 30 million tourists annually in just 5 square km",
+    "🍷 A bottle of 1945 Romanée-Conti sold for $558,000",
+    "🏨 Tokyo has more Michelin stars than Paris and London combined",
+    "🚁 Helicopter tours in NYC cost $200+ per person for 15 minutes",
+    "🌺 Bora Bora's overwater bungalows were invented in 1967",
+    "🎪 Monaco's casino generates 4% of the country's revenue",
+    "🏛️ The Vatican is the smallest country at 0.17 square miles",
+    "🦅 Dubai's Burj Al Arab uses 22-carat gold leaf on interiors",
+    "🌴 Seychelles has beaches with naturally pink sand",
+    "❄️ Antarctica luxury cruises cost $15,000+ per person"
     ]
     
     import random
@@ -248,7 +265,7 @@ with st.sidebar:
 # Premium Input Form
 with st.form(key='concierge_form', clear_on_submit=True):
     user_input = st.text_area('Share your travel aspirations...', height=100, placeholder="Describe your dream journey...")
-    submit_button = st.form_submit_button('✨ Consult AI Concierge', use_container_width=True)
+    submit_button = st.form_submit_button('✨ Consult Roamio', use_container_width=True)
 
 if submit_button and user_input.strip():
     try:
@@ -266,16 +283,16 @@ if submit_button and user_input.strip():
             """, unsafe_allow_html=True)
             
             st.markdown(f'**Crafted:** {datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")}')
-            st.markdown(f'**By:** Voyager Elite AI Concierge')
+            st.markdown(f'**By:** Roamio')
             
             st.markdown(answer)
             
-            st.success('💼 **Concierge Note:** Please verify all arrangements with official sources before travel.')
+            st.success('💼 **Roamio\'s Note:** Please verify all arrangements with official sources before travel.')
             
             st.markdown("---")
             st.markdown("""
             <div style='text-align: center; background: linear-gradient(135deg, #1a1a2e 0%, #2c2c54 100%); padding: 15px; border-radius: 8px; border: 1px solid #333;'>
-                <span style='color: #d4af37; font-style: italic;'>Crafted with Excellence | Voyager Elite Concierge</span>
+                <span style='color: #d4af37; font-style: italic;'>Crafted with Excellence | Roamio Concierge</span>
             </div>
             """, unsafe_allow_html=True)
             

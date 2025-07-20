@@ -185,7 +185,6 @@ st.set_page_config(
 )
 
 # Luxury Header
-# Luxury Header
 st.markdown("""
 <div style='
    text-align: center; 
@@ -262,7 +261,7 @@ st.markdown("""
        letter-spacing: clamp(1px, 2vw, 2px);
        font-size: clamp(1.2rem, 4vw, 1.5rem);
        width: 100%;
-   '>🌍 TRAVEL CURATOR</h3>
+   '>🌍 DESTINATION INQUIRY</h3>
 </div>
 """, unsafe_allow_html=True)
 
@@ -270,7 +269,7 @@ with st.sidebar:
     st.markdown("""
     <div style='
     text-align: center; 
-    padding: 15px 10px; 
+    padding: 15px 5px; 
     background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%); 
     border-radius: 10px; 
     margin-bottom: 20px; 
@@ -282,14 +281,16 @@ with st.sidebar:
     <h4 style='
         color: #d4af37; 
         margin: 0; 
-        letter-spacing: clamp(0.5px, 1.5vw, 1px);
-        font-size: clamp(1rem, 3.5vw, 1.25rem);
+        letter-spacing: clamp(0.2px, 0.8vw, 1px);
+        font-size: clamp(0.85rem, 3vw, 1.25rem);
         text-align: center;
         width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
     '>CONCIERGE SERVICES ✨</h4>
     </div>
     """, unsafe_allow_html=True)
-    
+
     st.markdown("### 🎯 Some Recommendations")
     st.markdown("""
     **For premium itineraries, include:**

@@ -282,7 +282,7 @@ with st.sidebar:
         color: #d4af37; 
         margin: 0; 
         letter-spacing: clamp(0.2px, 0.8vw, 1px);
-        font-size: clamp(0.85rem, 3vw, 1.25rem);
+        font-size: clamp(0.80rem, 3vw, 1.25rem);
         text-align: center;
         width: 100%;
         white-space: nowrap;

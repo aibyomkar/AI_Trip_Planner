@@ -36,6 +36,24 @@ Try it live! Enter a destination or travel style and receive a personalized mult
 
 ---
 
+## 🧠 What Can Roamio Do?
+
+Roamio is your AI-powered personal travel assistant that can:
+
+- 🧳 Understand your travel preferences: destination, dates, budget, group type, vibe, interests, and more.
+- 🧭 Generate full day-wise itineraries personalized just for you, instantly.
+- 🏙️ Suggest real places to visit — including landmarks, cafes, hidden gems, museums, and local experiences.
+- 🗺️ Organize the itinerary intelligently with proper ordering, timing, and proximity-based suggestions.
+- ✨ Discover offbeat locations and non-touristy ideas using real-time data from Tavily and Google Places APIs.
+- 🔍 Backed by **Google Maps’ dataset of over 200 million+ verified places**, Roamio gives incredibly accurate, data-rich recommendations.
+- 📆 Auto-balances days with different types of activities: cultural, relaxing, adventurous, scenic, etc.
+- 🌐 Fetch weather, travel tips, and even exchange rate info dynamically.
+- 💡 Ideal for solo travelers, couples, family holidays, or even group adventures.
+
+Whether you're planning a weekend escape or a multi-country backpacking trip — Roamio does it all.
+
+---
+
 ## 🚀 Getting Started – Developer Setup
 
 ### 1. Clone & install

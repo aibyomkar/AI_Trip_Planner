@@ -102,7 +102,7 @@ with st.sidebar:
     st.markdown("""
     <div style='
     text-align: center; 
-    padding: 10px 5px; 
+    padding: 5px 10px; 
     background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%); 
     border-radius: 10px; 
     margin-bottom: 20px; 

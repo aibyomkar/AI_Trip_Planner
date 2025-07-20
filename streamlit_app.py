@@ -242,8 +242,6 @@ with st.expander("🧠 What Can Roamio Do? Click to discover"):
     - 💡 Ideal for solo travelers, couples, family holidays, or even group adventures.
 
     Whether you're planning a weekend escape or a multi-country backpacking trip — Roamio does it all.
-
-    ---
     """)
 
 
@@ -317,6 +315,40 @@ with st.sidebar:
         </a>
     </div>
     """, unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Add this right before your form
+col1, col2 = st.columns([4, 1])
+with col2:
+    if st.button("ℹ️ About Roamio"):
+        st.info("Roamio uses Google Maps' 200M+ places dataset to create personalized itineraries with real places, timing, and proximity suggestions.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Premium Input Form
 with st.form(key='concierge_form', clear_on_submit=True):

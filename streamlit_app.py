@@ -226,7 +226,7 @@ if st.button("🚀 Create My Trip", type="primary", use_container_width=True):
                         <span style='color: #4A5568; font-weight: 500;'>📅 Generated: {datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")}</span>
                     </div>
                     <h4 style='color: #2B6CB0; margin: 15px 0; font-size: 1.3rem; font-weight: 600;'>
-                        🗺️ Your Premium Itinerary
+                        🗺️ Roamio's response:
                     </h4>
                     <div style='color: #2D3748; line-height: 1.6;'>{answer}</div>
                 </div>
@@ -245,7 +245,7 @@ if st.button("🚀 Create My Trip", type="primary", use_container_width=True):
                 <div style='text-align: center; background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%); 
                 padding: 15px; border-radius: 12px; margin-top: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);'>
                     <p style='color: #F7FAFC; margin: 0; font-weight: 500;'>
-                        Crafted with <span style='color: #F6AD55;'>✨</span> by Omkar's Premium AI
+                        Crafted with <span style='color: #F6AD55;'>✨</span> by Omkar, under the complete guidance of Krish Naik & Sunny Sir
                     </p>
                 </div>
                 """, unsafe_allow_html=True)

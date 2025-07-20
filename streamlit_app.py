@@ -232,7 +232,7 @@ with st.expander("🧠 What Can Roamio Do? Click to discover"):
    **Your AI-powered personal travel assistant:**
    
    - 🧳 Understands your preferences: destination, dates, budget, group type
-   - 🤖 Intelligently reasons and takes actions based on your input
+   - 🧠 Intelligently reasons and takes actions based on your input
    - 🧭 Generates personalized day-wise itineraries instantly
    - 🏙️ Suggests real places: landmarks, cafes, hidden gems, museums
    - 🗺️ Organizes intelligently with timing and proximity-based suggestions

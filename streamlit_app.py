@@ -280,10 +280,10 @@ with st.sidebar:
     st.markdown("### 🌐 Connect With Me")
     st.markdown("""
     <div style='text-align: center;'>
-        <a href='https://github.com/your_username' target='_blank' style='text-decoration: none; margin: 0 10px;'>
+        <a href='https://github.com/aibyomkar' target='_blank' style='text-decoration: none; margin: 0 10px;'>
             <span style='font-size: 15px;'>GitHub</span>
         </a>
-        <a href='https://instagram.com/your_handle' target='_blank' style='text-decoration: none; margin: 0 10px;'>
+        <a href='https://instagram.com/omkar_raps' target='_blank' style='text-decoration: none; margin: 0 10px;'>
             <span style='font-size: 15px;'>Instagram</span>
         </a>
     </div>

@@ -1,8 +1,3 @@
-Here’s a polished, step-by-step `README.md` tailored for your **AI Trip Planner** project, highlighting its full-stack setup, features, and how to deploy or contribute. Feel free to customize it further!
-
----
-
-````markdown
 # 🌍 AI Trip Planner
 
 **AI Trip Planner** is a full-stack application that uses powerful AI agents (via Groq and LangGraph) to generate detailed travel itineraries based on a user’s prompt. It features a Streamlit-powered frontend and a FastAPI backend, both deployed live and kept running with uptime monitoring.
@@ -168,7 +163,3 @@ Built with ❤️ and AI magic ✨
 ```
 
 ---
-
-Feel free to copy this straight into your `README.md`, and tweak sections like Features or Roadmap to match your exact vision. Great work — now showcase your project in style!
-::contentReference[oaicite:0]{index=0}
-```

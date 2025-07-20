@@ -12,7 +12,7 @@ def save_document(response_text: str, directory: str = './output'):
     markdown_content = f"""# 🌏 AI Trip Planner
 
     # **Generated:** {datetime.datetime.now().strftime('%Y-%m-%d at %H:%M')}  
-    # **Created by:** Omkar's AI Trip Planner
+    # **Created by:** Omkar's AI Trip Planner (Built under complete guidance of Krish Naik & Sunny Sir)
 
     ---
 

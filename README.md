@@ -1,4 +1,4 @@
-> ⚠️ **Disclaimer**: This project is based on the tutorial and original work by [Krish Naik](https://www.youtube.com/@KrishNaik) and the code from [sunnysavita10/AI_Trip_Planner](https://github.com/sunnysavita10/AI_Trip_Planner). I followed it for learning and educational purposes and just named it 'Roamio' because It felt cool.
+> ⚠️ **Disclaimer**: This project is based on the tutorial and original work by [Krish Naik](https://www.youtube.com/@KrishNaik) and the code from Sunny Sir [sunnysavita10/AI_Trip_Planner](https://github.com/sunnysavita10/AI_Trip_Planner). I followed it for learning and educational purposes and just named it 'Roamio' because It felt cool.
 
 # 🌍 Roamio - AI Trip Planner By Omkar
 
@@ -163,7 +163,7 @@ Contributions are welcome! Here’s how to help:
 
 ## 📄 Disclaimer & Credits
 
-This project is not an original creation. It is built entirely by following the educational tutorials of [Krish Naik](https://www.youtube.com/c/KrishNaik) and [Sunny Savita](https://github.com/sunnysavita10/AI_Trip_Planner).
+This project is not an original creation. It is built entirely by following the educational tutorials of [Krish Naik](https://www.youtube.com/c/KrishNaik) and [Sunny Sir](https://github.com/sunnysavita10/AI_Trip_Planner).
 The purpose of this repository is solely for learning, practice, and educational demonstration.
 **All credit for the core logic and design goes to the original creators.**
 

@@ -30,7 +30,7 @@ st.markdown("""
         margin: 5px 0;
         font-size: 1rem;
         font-style: italic;
-    '>Your AI Trip Planner by Omkar</p>
+    '>Your AI Trip Planner by Omkar, built with complete guidance from Krish Naik & Sunny Sir.</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -109,7 +109,7 @@ if submit_button and user_input.strip():
             st.markdown(
                 """
                 <div style='text-align: center; color: #666; padding: 10px;'>
-                    Made with ❤️ by Omkar
+                    Made with ❤️ by Omkar, under the complete guidance of Krish Naik & Sunny Sir
                 </div>
                 """, 
                 unsafe_allow_html=True

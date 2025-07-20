@@ -185,30 +185,64 @@ st.set_page_config(
 )
 
 # Luxury Header
+# Luxury Header
 st.markdown("""
-<div style='text-align: center; padding: 25px 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 15px; margin-bottom: 30px; border: 1px solid #333;'>
-    <h1 style='
-        font-size: 3.2rem; 
-        margin: 0;
-        font-weight: 300;
-        letter-spacing: 3px;
-        color: #fff;
-        font-family: "Times New Roman", serif;
-    '>✈️ ROAMIO <span style='
-        background: linear-gradient(45deg, #d4af37, #ffd700, #ffed4e);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 600;
-    '>AI</span></h1>
-    <p style='
-        color: #b8860b;
-        margin: 10px 0;
-        font-size: 1.1rem;
-        font-style: italic;
-        letter-spacing: 1px;
-    '>AI Trip Planner by Omkar · Guided by Krish Naik & Sunny Sir</p>
+<div style='
+   text-align: center; 
+   padding: 25px 15px; 
+   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); 
+   border-radius: 15px; 
+   margin-bottom: 30px; 
+   border: 1px solid #333;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+'>
+   <h1 style='
+       font-size: clamp(2rem, 5vw, 3.2rem); 
+       margin: 0;
+       font-weight: 300;
+       letter-spacing: clamp(1px, 2vw, 3px);
+       color: #fff;
+       font-family: "Times New Roman", serif;
+       text-align: center;
+       width: 100%;
+   '>✈️ ROAMIO <span style='
+       background: linear-gradient(45deg, #d4af37, #ffd700, #ffed4e);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       font-weight: 600;
+   '>AI</span></h1>
+   <p style='
+       color: #b8860b;
+       margin: 10px 0 0 0;
+       font-size: clamp(0.9rem, 3vw, 1.1rem);
+       font-style: italic;
+       letter-spacing: clamp(0.5px, 1vw, 1px);
+       text-align: center;
+       width: 100%;
+       max-width: 90%;
+   '>AI Trip Planner by Omkar · Guided by Krish Naik & Sunny Sir</p>
 </div>
 """, unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 with st.expander("🧠 What Can Roamio Do? Click to discover"):
    st.markdown("""   

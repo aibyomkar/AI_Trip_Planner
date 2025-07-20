@@ -262,6 +262,18 @@ with st.sidebar:
     import random
     st.info(random.choice(luxury_facts))
 
+    st.markdown("### 🌐 Connect With Us")
+    st.markdown("""
+    <div style='text-align: center;'>
+        <a href='https://github.com/your_username' target='_blank' style='text-decoration: none; margin: 0 10px;'>
+            <span style='font-size: 24px;'>💻</span>
+        </a>
+        <a href='https://instagram.com/your_handle' target='_blank' style='text-decoration: none; margin: 0 10px;'>
+            <span style='font-size: 24px;'>📸</span>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+
 # Premium Input Form
 with st.form(key='concierge_form', clear_on_submit=True):
     user_input = st.text_area('Share your travel aspirations...', height=100, placeholder="Describe your dream journey...")

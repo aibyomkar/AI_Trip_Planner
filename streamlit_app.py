@@ -166,99 +166,77 @@ import requests
 import datetime
 import random
 
-# BASE_URL = 'http://localhost:8000'  # Backend endpoint
-BASE_URL = 'https://ai-trip-planner-backend-jrdl.onrender.com'  # Backend endpoint
+BASE_URL = 'https://ai-trip-planner-backend-jrdl.onrender.com'
 
-st.set_page_config(
-    page_title="Roamio AI",
-    page_icon="🌏",
-    layout="centered",
-    initial_sidebar_state='expanded'
-)
+st.set_page_config(page_title="Roamio AI", page_icon="🌏", layout="centered")
 
 # Header
 st.markdown("""
-<div style='text-align: center; padding: 15px 0;'>
-    <h1 style='
-        font-size: 2.8rem; 
-        margin: 0;
-        font-weight: 600;
-    '>🌏 <span style='
-        background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    '>Roamio AI</span></h1>
-    <p style='
-        color: #7c8db5;
-        margin: 5px 0;
-        font-size: 1rem;
-        font-style: italic;
-    '>Your AI Trip Planner by Omkar, built with complete guidance from Krish Naik & Sunny Sir.</p>
+<div style='text-align: center; padding: 20px; background: #1A1A1A; border-radius: 10px; margin-bottom: 20px;'>
+    <h1 style='color: #00BFA6; margin: 0;'>🌏 Roamio AI</h1>
+    <p style='color: #F5F5F5; margin: 5px 0;'>Your AI Trip Planner by Omkar</p>
 </div>
 """, unsafe_allow_html=True)
 
 # Sidebar
 with st.sidebar:
     st.markdown("""
-    <div style='text-align: center; padding: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-    border-radius: 8px; margin-bottom: 15px;'>
-        <h4 style='color: white; margin: 0;'>Hey Buddy Welcome ✈️</h4>
+    <div style='background: #00BFA6; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 15px;'>
+        <h4 style='color: #1A1A1A; margin: 0;'>Welcome ✈️</h4>
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("### 🎯 Quick Tips")
-    st.markdown("""
-               - For best results, prompt AI with as much details as possible
-                
-               - Example: plan a 5 day trip to usa for 5 people, we prefer beaches, convert the currency from usd to inr, per person budget is between 10 lakh to 11 lakhs inr
-               """)
+    st.markdown("### 🎯 Tips")
+    st.info("Be detailed: 'Plan 5-day USA trip for 5 people, beaches, budget 10-11 lakhs INR'")
     
-    st.divider()
-    
-    facts = ["🏔️ Nepal has 8 of the world's 10 tallest mountains", "🌊 Maldives has 1,192 coral islands", "🕌 India has 38 UNESCO World Heritage Sites"]
+    facts = ["🏔️ Nepal has 8 of world's tallest mountains", "🌊 Maldives has 1,192 coral islands", "🕌 India has 38 UNESCO sites"]
     st.markdown("### 🌍 Did You Know?")
-    st.info(random.choice(facts))
-    
-    st.divider()
-    
-    # Footer
-    st.markdown("""
-    <div style='text-align: center; color: #888;'>
-        <small>🤖 Your AI Travel Buddy</small>
-    </div>
-    """, unsafe_allow_html=True)
+    st.success(random.choice(facts))
 
-# Main content
-st.header('🧭 Where shall we explore next?')
+# Main
+st.markdown("<h3 style='color: #1A1A1A; text-align: center;'>🧭 Where shall we explore?</h3>", unsafe_allow_html=True)
 
-# Chat input box
-with st.form(key='query_form', clear_on_submit=True):
-    user_input = st.text_input('Prompt Here')
-    submit_button = st.form_submit_button('Ask AI', type="primary", use_container_width=True)
+user_input = st.text_input("Describe your trip", placeholder="Plan my dream vacation...")
+if st.button("Ask AI", type="primary", use_container_width=True):
+    if user_input:
+        try:
+            with st.spinner("Thinking..."):
+                response = requests.post(f'{BASE_URL}/query', json={'query': user_input})
+            
+            if response.status_code == 200:
+                answer = response.json().get('answer', 'No answer returned.')
+                
+                st.markdown(f"""
+                <div style='background: #F5F5F5; padding: 20px; border-radius: 10px; border-left: 5px solid #00BFA6;'>
+                    <p style='color: #1A1A1A;'><b>Generated:</b> {datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")}</p>
+                    <h4 style='color: #00BFA6;'>🧭 Your Trip Plan</h4>
+                    <div style='color: #1A1A1A;'>{answer}</div>
+                </div>
+                """, unsafe_allow_html=True)
+                
+                st.warning("💡 Verify all details before traveling")
+                
+                st.markdown("""
+                <div style='text-align: center; background: #1A1A1A; padding: 10px; border-radius: 8px; margin-top: 20px;'>
+                    <p style='color: #F5F5F5; margin: 0;'>Made with <span style='color: #FFD700;'>❤️</span> by Omkar</p>
+                </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.error("❌ AI failed to respond")
+        except Exception as e:
+            st.error(f"🚨 Error: {e}")
+    else:
+        st.warning("Please enter a travel query")
 
-if submit_button and user_input.strip():
-    try:
-        with st.spinner('Roamio AI is thinking...'):
-            payload = {'query': user_input}
-            response = requests.post(f'{BASE_URL}/query', json=payload)
-        
-        if response.status_code == 200:
-            answer = response.json().get('answer', 'No answer returned.')
-            
-            st.write(f'**Generated:** {datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")}')
-            st.write(f'**Created by:** Omkar\'s Roamio AI Trip Planner')
-            
-            st.subheader('🧭 AI Trip Plan')
-            st.markdown(answer)
-            st.info('💡 *Note: This trip plan was generated by AI. Please verify all details like pricing, timings, and safety measures before your trip.*')
-            
-            st.markdown("---")
-            st.markdown("""
-            <div style='text-align: center; color: #666; padding: 10px;'>
-                Made with ❤️ by Omkar, under the complete guidance of Krish Naik & Sunny Sir
-            </div>
-            """, unsafe_allow_html=True)
-        else:
-            st.error('❌ AI failed to respond: ' + response.text)
-    except Exception as e:
-        st.error(f'🚨 The response failed due to: {e}')
+# Button styling
+st.markdown("""
+<style>
+.stButton > button {
+    background: linear-gradient(45deg, #FFD700, #00BFA6);
+    color: #1A1A1A;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+}
+</style>
+""", unsafe_allow_html=True)

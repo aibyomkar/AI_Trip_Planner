@@ -162,8 +162,6 @@ with st.sidebar:
     import random
     st.info(random.choice(luxury_facts))
 
-    st.info('If Roamio crashes, reload and try again')
-
     st.markdown("### 🌐 Connect With Me")
     st.markdown("""
     <div style='text-align: center;'>

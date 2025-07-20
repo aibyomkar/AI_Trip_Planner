@@ -354,11 +354,31 @@ if submit_button and user_input.strip():
 
             # Elegant Results Display
             st.markdown("""
-            <div style='background: linear-gradient(135deg, #1a1a2e 0%, #2c2c54 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #333;'>
-                <h3 style='color: #d4af37; text-align: center; margin-bottom: 15px; letter-spacing: 2px;'>📋 CURATED ITINERARY</h3>
+            <div style='
+            background: linear-gradient(135deg, #1a1a2e 0%, #2c2c54 100%); 
+            padding: 20px 15px; 
+            border-radius: 12px; 
+            margin: 20px 0; 
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            '>
+            <h3 style='
+                color: #d4af37; 
+                text-align: center; 
+                margin: 0; 
+                letter-spacing: clamp(1px, 2vw, 2px);
+                font-size: clamp(1.2rem, 4vw, 1.5rem);
+                width: 100%;
+            '>📋 CURATED ITINERARY</h3>
             </div>
             """, unsafe_allow_html=True)
-            
+
+
+
+
+
             st.markdown(f'**Crafted:** {datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")}')
             st.markdown(f'**By:** Roamio')
             

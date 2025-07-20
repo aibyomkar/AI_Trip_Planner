@@ -4,7 +4,8 @@ import streamlit as st
 import requests
 import datetime
 
-BASE_URL = 'http://localhost:8000'  # Backend endpoint
+# BASE_URL = 'http://localhost:8000'  # Backend endpoint
+BASE_URL = 'https://ai-trip-planner-backend-jrdl.onrender.com'  # Backend endpoint
 
 st.set_page_config(
     page_title="Roamio AI",

@@ -161,6 +161,11 @@
 
 
 
+
+
+
+
+
 import streamlit as st
 import requests
 import datetime
@@ -172,71 +177,115 @@ st.set_page_config(page_title="Roamio AI", page_icon="🌏", layout="centered")
 
 # Header
 st.markdown("""
-<div style='text-align: center; padding: 20px; background: #1A1A1A; border-radius: 10px; margin-bottom: 20px;'>
-    <h1 style='color: #00BFA6; margin: 0;'>🌏 Roamio AI</h1>
-    <p style='color: #F5F5F5; margin: 5px 0;'>Your AI Trip Planner by Omkar</p>
+<div style='text-align: center; padding: 25px; background: linear-gradient(135deg, #0F0F23 0%, #1A1A40 100%); 
+border-radius: 15px; margin-bottom: 25px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);'>
+    <h1 style='color: #FFFFFF; margin: 0; font-size: 2.5rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);'>
+        🌏 Roamio AI
+    </h1>
+    <p style='color: #A8A8FF; margin: 8px 0; font-size: 1.1rem; opacity: 0.9;'>Premium AI Trip Planner</p>
 </div>
 """, unsafe_allow_html=True)
 
 # Sidebar
 with st.sidebar:
     st.markdown("""
-    <div style='background: #00BFA6; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 15px;'>
-        <h4 style='color: #1A1A1A; margin: 0;'>Welcome ✈️</h4>
+    <div style='background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%); padding: 20px; 
+    border-radius: 12px; text-align: center; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(108, 92, 231, 0.3);'>
+        <h4 style='color: #FFFFFF; margin: 0; font-weight: 600;'>Welcome Aboard ✈️</h4>
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("### 🎯 Tips")
-    st.info("Be detailed: 'Plan 5-day USA trip for 5 people, beaches, budget 10-11 lakhs INR'")
+    st.markdown("### 🎯 Pro Tips")
+    st.info("💡 Be specific: 'Plan 5-day Japan trip, 4 people, temples & culture, $3000 budget'")
     
-    facts = ["🏔️ Nepal has 8 of world's tallest mountains", "🌊 Maldives has 1,192 coral islands", "🕌 India has 38 UNESCO sites"]
-    st.markdown("### 🌍 Did You Know?")
+    facts = ["🗾 Japan has over 6,800 islands", "🏔️ Switzerland has 208 mountains over 3000m", "🌺 Hawaii has 137 islands total"]
+    st.markdown("### ✨ Travel Facts")
     st.success(random.choice(facts))
 
 # Main
-st.markdown("<h3 style='color: #1A1A1A; text-align: center;'>🧭 Where shall we explore?</h3>", unsafe_allow_html=True)
+st.markdown("""
+<h3 style='color: #2D3748; text-align: center; font-weight: 600; margin: 25px 0; 
+font-size: 1.4rem;'>🧭 Where shall we craft your perfect journey?</h3>
+""", unsafe_allow_html=True)
 
-user_input = st.text_input("Describe your trip", placeholder="Plan my dream vacation...")
-if st.button("Ask AI", type="primary", use_container_width=True):
+user_input = st.text_input("", placeholder="✨ Describe your dream destination & preferences...", label_visibility="hidden")
+if st.button("🚀 Create My Trip", type="primary", use_container_width=True):
     if user_input:
         try:
-            with st.spinner("Thinking..."):
+            with st.spinner("✨ Crafting your perfect itinerary..."):
                 response = requests.post(f'{BASE_URL}/query', json={'query': user_input})
             
             if response.status_code == 200:
                 answer = response.json().get('answer', 'No answer returned.')
                 
                 st.markdown(f"""
-                <div style='background: #F5F5F5; padding: 20px; border-radius: 10px; border-left: 5px solid #00BFA6;'>
-                    <p style='color: #1A1A1A;'><b>Generated:</b> {datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")}</p>
-                    <h4 style='color: #00BFA6;'>🧭 Your Trip Plan</h4>
-                    <div style='color: #1A1A1A;'>{answer}</div>
+                <div style='background: linear-gradient(135deg, #F8FAFC 0%, #EDF2F7 100%); 
+                padding: 25px; border-radius: 15px; border: 1px solid #E2E8F0; 
+                box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin: 20px 0;'>
+                    <div style='display: flex; justify-content: space-between; margin-bottom: 15px;'>
+                        <span style='color: #4A5568; font-weight: 500;'>📅 Generated: {datetime.datetime.now().strftime("%Y-%m-%d at %H:%M")}</span>
+                    </div>
+                    <h4 style='color: #2B6CB0; margin: 15px 0; font-size: 1.3rem; font-weight: 600;'>
+                        🗺️ Your Premium Itinerary
+                    </h4>
+                    <div style='color: #2D3748; line-height: 1.6;'>{answer}</div>
                 </div>
                 """, unsafe_allow_html=True)
                 
-                st.warning("💡 Verify all details before traveling")
+                st.markdown("""
+                <div style='background: linear-gradient(135deg, #FFF3CD 0%, #FCF4DB 100%); 
+                padding: 15px; border-radius: 10px; border-left: 4px solid #F59E0B; margin: 15px 0;'>
+                    <p style='color: #92400E; margin: 0; font-weight: 500;'>
+                        ⚡ Professional Advice: Verify all pricing, availability & requirements before booking
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
                 
                 st.markdown("""
-                <div style='text-align: center; background: #1A1A1A; padding: 10px; border-radius: 8px; margin-top: 20px;'>
-                    <p style='color: #F5F5F5; margin: 0;'>Made with <span style='color: #FFD700;'>❤️</span> by Omkar</p>
+                <div style='text-align: center; background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%); 
+                padding: 15px; border-radius: 12px; margin-top: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);'>
+                    <p style='color: #F7FAFC; margin: 0; font-weight: 500;'>
+                        Crafted with <span style='color: #F6AD55;'>✨</span> by Omkar's Premium AI
+                    </p>
                 </div>
                 """, unsafe_allow_html=True)
             else:
-                st.error("❌ AI failed to respond")
+                st.error("🚫 Service temporarily unavailable")
         except Exception as e:
-            st.error(f"🚨 Error: {e}")
+            st.error(f"⚠️ Connection error: {e}")
     else:
-        st.warning("Please enter a travel query")
+        st.warning("💭 Please share your travel vision with us")
 
-# Button styling
+# Premium button styling
 st.markdown("""
 <style>
 .stButton > button {
-    background: linear-gradient(45deg, #FFD700, #00BFA6);
-    color: #1A1A1A;
-    font-weight: bold;
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
+    padding: 12px 24px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+.stTextInput > div > div > input {
+    border: 2px solid #E2E8F0;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #2D3748;
+    padding: 12px;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.stTextInput > div > div > input:focus {
+    border-color: #667EEA;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 </style>
 """, unsafe_allow_html=True)

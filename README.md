@@ -1,6 +1,6 @@
 # 🌍 Roamio - AI Trip Planner By Omkar
 
-**Roamio** is a full-stack AI app that uses technologies like Groq and LangGraph to generate detailed travel itineraries based on a user’s prompt. It features a Streamlit-powered frontend and a FastAPI backend, both deployed live and kept running with uptime monitoring.
+**Roamio** is a full-stack AI web app that uses technologies like Groq and LangGraph to generate detailed travel itineraries based on a user’s prompt. It features a Streamlit-powered frontend and a FastAPI backend, both deployed live and kept running with uptime monitoring.
 
 ---
 

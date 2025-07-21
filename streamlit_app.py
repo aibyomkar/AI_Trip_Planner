@@ -175,7 +175,7 @@ with st.sidebar:
 
 # Premium Input Form
 with st.form(key='concierge_form', clear_on_submit=True):
-    user_input = st.text_area('Share your travel aspirations...', height=100, placeholder="Plan a 5-day Goa trip for 5 people, prefer beaches & mountains, ₹30K/person budget, forecast next week's 5-day weather & per-day expense.")
+    user_input = st.text_area('Share your travel aspirations...', height=150, placeholder="Plan a 5-day Goa trip for 5 people, prefer beaches & mountains, ₹30K/person budget, forecast next week's 5-day weather & per-day expense.")
     submit_button = st.form_submit_button('✨ Consult Roamio', use_container_width=True)
 
 if submit_button and user_input.strip():

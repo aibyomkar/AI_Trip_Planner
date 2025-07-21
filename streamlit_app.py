@@ -40,12 +40,12 @@ st.markdown("""
        font-family: "Times New Roman", serif;
        text-align: center;
        width: 100%;
-   '>✈️ ROAMIO <span style='
+   '>✈️ ROAM<span style='
        background: linear-gradient(45deg, #d4af37, #ffd700, #ffed4e);
        -webkit-background-clip: text;
        -webkit-text-fill-color: transparent;
        font-weight: 600;
-   '>AI</span></h1>
+   '>IO</span></h1>
    <p style='
        color: #b8860b;
        margin: 10px 0 0 0;
